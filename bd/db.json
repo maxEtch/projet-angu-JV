@@ -77,7 +77,7 @@
       "genre": "Action-Aventure",
       "developpeur": "Rockstar Games",
       "dateSortie": "2019-11-05",
-      "stockDisponible": 1,
+      "stockDisponible": 0,
       "onsale": false
     },
     {
@@ -181,6 +181,26 @@
       "plateforme": "Xbox Series X",
       "dateReservation": "2025-04-01T00:00:00.000Z",
       "statut": "En attente"
+    },
+    {
+      "id": 0,
+      "nomClient": "Théo Lagüe",
+      "emailClient": "theolague@gmail.com",
+      "numeroTelephone": "0505050505",
+      "titreJeu": "Cyberpunk 2077",
+      "plateforme": "PC",
+      "dateReservation": "2025-04-03T00:00:00.000Z",
+      "statut": "Annulée"
+    },
+    {
+      "id": 0,
+      "nomClient": "Théo Lagüe",
+      "emailClient": "theolague@gmail.com",
+      "numeroTelephone": "0505050505",
+      "titreJeu": "Red Dead Redemption 2",
+      "plateforme": "PC",
+      "dateReservation": "2025-04-03T00:00:00.000Z",
+      "statut": "Confirmée"
     }
   ]
 }

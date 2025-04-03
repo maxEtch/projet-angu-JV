@@ -55,7 +55,6 @@
                   <th>Plateforme</th>
                   <th>Date</th>
                   <th>Statut</th>
-                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -75,13 +74,6 @@
                       }">
                       {{ reservation.statut }}
                     </span>
-                  </td>
-                  <td>
-                    <div class="dropdown">
-                      <button class="btn btn-sm" type="button">
-                        <a class="dropdown-item text-danger" (click)="deleteReservation(reservation.id!)">Supprimer</a>
-                      </button>
-                    </div>
                   </td>
                 </tr>
               </tbody>
