@@ -1,0 +1,142 @@
+.card {
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    padding: 1.25rem 1.5rem;
+    
+    h3 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+    
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      
+      strong {
+        color: var(--primary-color);
+        display: inline-block;
+        min-width: 150px;
+      }
+    }
+    
+    .btn-group {
+      margin-top: 1rem;
+      
+      .btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        border-radius: 4px;
+        
+        i {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  
+  .card-footer {
+    padding: 1.25rem 1.5rem;
+    background-color: #f8f9fa;
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      font-weight: 500;
+      
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.table {
+  th {
+    font-weight: 600;
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+    white-space: nowrap;
+  }
+  
+  td {
+    vertical-align: middle;
+    
+    .badge {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    
+    .btn {
+      padding: 0.4rem 0.75rem;
+      
+      i {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+/* Animation pour les changements de stock */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.stock-changed {
+  animation: pulse 0.5s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-body {
+    .col-md-8, .col-md-4 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .text-center {
+      text-align: left !important;
+    }
+    
+    .btn-group {
+      display: flex;
+      width: 100%;
+      
+      .btn {
+        flex: 1;
+      }
+    }
+  }
+  
+  .card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    
+    .btn {
+      width: 100%;
+    }
+  }
+  
+  .table {
+    td, th {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.875rem;
+    }
+  }
+}

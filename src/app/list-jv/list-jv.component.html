@@ -1,0 +1,82 @@
+<!-- list-jv.component.html -->
+<div class="catalogue-container">
+    <header class="catalogue-header">
+      <h2>Catalogue de Jeux Vidéo</h2>
+      <p>Découvrez la collection de jeux</p>
+    </header>
+  
+    <div class="filters-panel">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input 
+          type="text" 
+          [(ngModel)]="searchTerm" 
+          (input)="applyFilters()" 
+          placeholder="Rechercher par titre">
+      </div>
+      
+      <div class="filter-selects">
+        <div class="select-wrapper">
+          <select [(ngModel)]="selectedPlatform" (change)="applyFilters()">
+            <option value="">Toutes les plateformes</option>
+            <option *ngFor="let platform of platforms" [value]="platform">{{platform}}</option>
+          </select>
+        </div>
+        
+        <div class="select-wrapper">
+          <select [(ngModel)]="selectedGenre" (change)="applyFilters()">
+            <option value="">Tous les genres</option>
+            <option *ngFor="let genre of genres" [value]="genre">{{genre}}</option>
+          </select>
+        </div>
+        
+        <button class="btn-reset" (click)="resetFilters()">
+          <i class="fas fa-undo"></i> Réinitialiser
+        </button>
+      </div>
+    </div>
+  
+  
+    <div class="games-grid">
+      <div class="game-card" *ngFor="let jeu of filteredJV">
+        <div class="game-label" *ngIf="jeu.onsale">Disponible</div>
+        <div class="game-label out-of-stock" *ngIf="jeu.stockDisponible <= 0">Rupture</div>
+        
+        <div class="game-header">
+          <h3>{{jeu.titre}}</h3>
+          <span class="game-platform">{{jeu.plateforme}}</span>
+        </div>
+        
+        <div class="game-info">
+          <div class="info-item">
+            <span class="label">Genre:</span>
+            <span class="value">{{jeu.genre}}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Développeur:</span>
+            <span class="value">{{jeu.developpeur}}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Date de sortie:</span>
+            <span class="value">{{jeu.dateSortie | date:'dd/MM/yyyy'}}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Stock:</span>
+            <span class="value stock" [class.low-stock]="jeu.stockDisponible <= 2">
+              {{jeu.stockDisponible}} exemplaire(s)
+            </span>
+          </div>
+        </div>
+        
+        <div class="game-actions">
+          <a [routerLink]="['/jeux', jeu.id]" class="btn-details">
+            <i class="fas fa-info-circle"></i> Détails
+          </a>
+          <a [routerLink]="['/nouvelle-reservation']" [queryParams]="{jeuId: jeu.id}" 
+            class="btn-reserve" [class.disabled]="jeu.stockDisponible <= 0">
+            <i class="fas fa-bookmark"></i> Réserver
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>

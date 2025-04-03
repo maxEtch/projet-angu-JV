@@ -1,0 +1,186 @@
+{
+  "jeux": [
+    {
+      "id": "1",
+      "titre": "The Legend of Zelda: Breath of the Wild",
+      "plateforme": "Switch",
+      "genre": "Action-Aventure",
+      "developpeur": "Nintendo",
+      "dateSortie": "2017-03-03",
+      "stockDisponible": 4,
+      "onsale": true
+    },
+    {
+      "id": "2",
+      "titre": "Elden Ring",
+      "plateforme": "PlayStation 5",
+      "genre": "RPG",
+      "developpeur": "FromSoftware",
+      "dateSortie": "2022-02-25",
+      "stockDisponible": 3,
+      "onsale": true
+    },
+    {
+      "id": "3",
+      "titre": "God of War Ragnarök",
+      "plateforme": "PlayStation 5",
+      "genre": "Action-Aventure",
+      "developpeur": "Santa Monica Studio",
+      "dateSortie": "2022-11-09",
+      "stockDisponible": 4,
+      "onsale": true
+    },
+    {
+      "id": "4",
+      "titre": "Cyberpunk 2077",
+      "plateforme": "PC",
+      "genre": "RPG",
+      "developpeur": "CD Projekt Red",
+      "dateSortie": "2020-12-10",
+      "stockDisponible": 1,
+      "onsale": false
+    },
+    {
+      "id": "5",
+      "titre": "Halo Infinite",
+      "plateforme": "Xbox Series X",
+      "genre": "FPS",
+      "developpeur": "343 Industries",
+      "dateSortie": "2021-12-08",
+      "stockDisponible": 6,
+      "onsale": true
+    },
+    {
+      "id": "6",
+      "titre": "Animal Crossing: New Horizons",
+      "plateforme": "Switch",
+      "genre": "Simulation",
+      "developpeur": "Nintendo",
+      "dateSortie": "2020-03-20",
+      "stockDisponible": 7,
+      "onsale": true
+    },
+    {
+      "id": "7",
+      "titre": "Final Fantasy XVI",
+      "plateforme": "PlayStation 5",
+      "genre": "RPG",
+      "developpeur": "Square Enix",
+      "dateSortie": "2023-06-22",
+      "stockDisponible": 3,
+      "onsale": true
+    },
+    {
+      "id": "8",
+      "titre": "Red Dead Redemption 2",
+      "plateforme": "PC",
+      "genre": "Action-Aventure",
+      "developpeur": "Rockstar Games",
+      "dateSortie": "2019-11-05",
+      "stockDisponible": 1,
+      "onsale": false
+    },
+    {
+      "id": "9",
+      "titre": "Starfield",
+      "plateforme": "Xbox Series X",
+      "genre": "RPG",
+      "developpeur": "Bethesda Game Studios",
+      "dateSortie": "2023-09-06",
+      "stockDisponible": 3,
+      "onsale": true
+    },
+    {
+      "id": "10",
+      "titre": "Forza Horizon 5",
+      "plateforme": "Xbox Series X",
+      "genre": "Course",
+      "developpeur": "Playground Games",
+      "dateSortie": "2021-11-09",
+      "stockDisponible": 2,
+      "onsale": true
+    }
+  ],
+  "reservations": [
+    {
+      "id": "1",
+      "nomClient": "Martin Dupont",
+      "emailClient": "martin.dupont@email.com",
+      "numeroTelephone": "06 12 34 56 78",
+      "titreJeu": "Elden Ring",
+      "plateforme": "PlayStation 5",
+      "dateReservation": "2025-03-15",
+      "statut": "Confirmée"
+    },
+    {
+      "id": "2",
+      "nomClient": "Julie Moreau",
+      "emailClient": "julie.m@email.com",
+      "numeroTelephone": "07 23 45 67 89",
+      "titreJeu": "The Legend of Zelda: Breath of the Wild",
+      "plateforme": "Switch",
+      "dateReservation": "2025-03-18",
+      "statut": "En attente"
+    },
+    {
+      "id": "3",
+      "nomClient": "Thomas Lefebvre",
+      "emailClient": "thomas.lefebvre@email.com",
+      "numeroTelephone": "06 34 56 78 90",
+      "titreJeu": "Cyberpunk 2077",
+      "plateforme": "PC",
+      "dateReservation": "2025-03-10",
+      "statut": "Confirmée"
+    },
+    {
+      "id": "4",
+      "nomClient": "Sophie Bernard",
+      "emailClient": "sophie.b@email.com",
+      "numeroTelephone": "07 45 67 89 01",
+      "titreJeu": "Starfield",
+      "plateforme": "Xbox Series X",
+      "dateReservation": "2025-03-22",
+      "statut": "En attente"
+    },
+    {
+      "id": "5",
+      "nomClient": "Lucas Petit",
+      "emailClient": "lucas.p@email.com",
+      "numeroTelephone": "06 56 78 90 12",
+      "titreJeu": "Final Fantasy XVI",
+      "plateforme": "PlayStation 5",
+      "dateReservation": "2025-03-14",
+      "statut": "Annulée"
+    },
+    {
+      "id": 0,
+      "nomClient": "Etchecopar",
+      "emailClient": "metchecopar0@gmail.com",
+      "numeroTelephone": "0628951969",
+      "titreJeu": "The Legend of Zelda: Breath of the Wild",
+      "plateforme": "Switch",
+      "dateReservation": "2025-04-03T00:00:00.000Z",
+      "statut": "En attente"
+    },
+    {
+      "id": 0,
+      "nomClient": "Etchecopar",
+      "emailClient": "metchecopar0@gmail.com",
+      "numeroTelephone": "0628951969",
+      "titreJeu": "Cyberpunk 2077",
+      "plateforme": "PC",
+      "dateReservation": "2025-04-03T00:00:00.000Z",
+      "statut": "Confirmée"
+    },
+    {
+      "id": 0,
+      "nomClient": "Etchecopar",
+      "emailClient": "metchecopar0@gmail.com",
+      "numeroTelephone": "0628951969",
+      "titreJeu": "Starfield",
+      "plateforme": "Xbox Series X",
+      "dateReservation": "2025-04-01T00:00:00.000Z",
+      "statut": "En attente"
+    }
+  ]
+}

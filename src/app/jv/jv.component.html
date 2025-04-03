@@ -1,0 +1,82 @@
+<div class="container mt-4">  
+
+  
+    <div *ngIf="!loading && theJV">
+      <!-- Détails du jeu -->
+      <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+          <h3>{{ theJV.titre }}</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-8">
+              <p><strong>Plateforme:</strong> {{ theJV.plateforme }}</p>
+              <p><strong>Genre:</strong> {{ theJV.genre }}</p>
+              <p><strong>Développeur:</strong> {{ theJV.developpeur }}</p>
+              <p><strong>Date de sortie:</strong> {{ theJV.dateSortie | date:'dd/MM/yyyy' }}</p>
+              <p><strong>Stock disponible:</strong> {{ theJV.stockDisponible }} exemplaire(s)</p>
+            </div>
+            <div class="col-md-4 text-center">
+              <div class="btn-group">
+                <button class="btn btn-success" (click)="onAddJV()">
+                  <i class="bi bi-plus-circle"></i> Ajouter au stock
+                </button>
+                <button class="btn btn-danger" (click)="onRemoveJV()" [disabled]="theJV.stockDisponible <= 0">
+                  <i class="bi bi-dash-circle"></i> Retirer du stock
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" routerLink="/jeux">Retour à la liste</button>
+          <button class="btn btn-success ms-2" [routerLink]="['/nouvelle-reservation']" [queryParams]="{jeuId: theJV.id}">
+            Réserver ce jeu
+          </button>
+        </div>
+      </div>
+  
+      <!-- Liste des réservations -->
+      <div class="card">
+        <div class="card-header bg-info text-white">
+          <h4>Réservations pour ce jeu</h4>
+        </div>
+        <div class="card-body">
+          <div *ngIf="reservations.length === 0" class="text-center">
+            Aucune réservation pour ce jeu.
+          </div>
+          <div class="table-responsive" *ngIf="reservations.length > 0">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Email</th>
+                  <th>Téléphone</th>
+                  <th>Date de réservation</th>
+                  <th>Statut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let reservation of reservations">
+                  <td>{{ reservation.nomClient }}</td>
+                  <td>{{ reservation.emailClient }}</td>
+                  <td>{{ reservation.numeroTelephone }}</td>
+                  <td>{{ reservation.dateReservation | date:'dd/MM/yyyy' }}</td>
+                  <td>
+                    <span class="badge" 
+                      [ngClass]="{
+                        'bg-success': reservation.statut === 'Confirmée',
+                        'bg-warning': reservation.statut === 'En attente',
+                        'bg-danger': reservation.statut === 'Annulée'
+                      }">
+                      {{ reservation.statut }}
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

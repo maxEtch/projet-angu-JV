@@ -1,0 +1,135 @@
+<div class="container mt-4">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h3>Nouvelle réservation</h3>
+      </div>
+      <div class="card-body">
+
+  
+        <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" *ngIf="!submitted">
+          <h4 class="mb-3">Informations du client</h4>
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="nomClient" class="form-label">Nom *</label>
+              <input placeholder="Votre nom"
+                id="nomClient" 
+                type="text" 
+                class="form-control" 
+                formControlName="nomClient"
+                [ngClass]="{'is-invalid': reservationForm.get('nomClient')?.touched && reservationForm.get('nomClient')?.invalid}">
+              <div class="invalid-feedback" *ngIf="reservationForm.get('nomClient')?.errors?.['required']">
+                Le nom du client est requis
+              </div>
+              <div class="invalid-feedback" *ngIf="reservationForm.get('nomClient')?.errors?.['minlength']">
+                Le nom doit contenir au moins 2 caractères
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="emailClient" class="form-label">Email *</label>
+              <input placeholder="admin@admin.fr"
+                id="emailClient" 
+                type="email" 
+                class="form-control" 
+                formControlName="emailClient"
+                [ngClass]="{'is-invalid': reservationForm.get('emailClient')?.touched && reservationForm.get('emailClient')?.invalid}">
+              <div class="invalid-feedback" *ngIf="reservationForm.get('emailClient')?.errors?.['required']">
+                L'email du client est requis
+              </div>
+              <div class="invalid-feedback" *ngIf="reservationForm.get('emailClient')?.errors?.['email']">
+                Veuillez saisir un email valide
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="numeroTelephone" class="form-label">Numéro de téléphone *</label>
+
+              <input placeholder="0505050505"
+                id="numeroTelephone" 
+                type="tel" 
+                class="form-control" 
+                formControlName="numeroTelephone"
+                [ngClass]="{'is-invalid': reservationForm.get('numeroTelephone')?.touched && reservationForm.get('numeroTelephone')?.invalid}">
+              <div class="invalid-feedback" *ngIf="reservationForm.get('numeroTelephone')?.errors?.['required']" > 
+                Le numéro de téléphone est requis
+              </div>
+              <div class="invalid-feedback" *ngIf="reservationForm.get('numeroTelephone')?.errors?.['pattern']">
+                Veuillez saisir un numéro à 10 chiffres
+              </div>
+            </div>
+          </div>
+  
+          <!-- Informations jeu -->
+          <h4 class="mb-3">Informations du jeu</h4>
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="titreJeu" class="form-label">Titre du jeu *</label>
+              <select 
+                id="titreJeu" 
+                class="form-select" 
+                formControlName="titreJeu"
+                [ngClass]="{'is-invalid': reservationForm.get('titreJeu')?.touched && reservationForm.get('titreJeu')?.invalid}"
+                (change)="onJeuSelected($event)">
+                <option value="">Sélectionner un jeu</option>
+                <option *ngFor="let jeu of jeux" [value]="jeu.titre" [disabled]="jeu.stockDisponible <= 0">
+                  {{ jeu.titre }} {{ jeu.stockDisponible <= 0 ? '(Rupture de stock)' : '' }}
+                </option>
+              </select>
+              <div class="invalid-feedback" *ngIf="reservationForm.get('titreJeu')?.errors?.['required']">
+                Veuillez sélectionner un jeu
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="plateforme" class="form-label">Plateforme *</label>
+              <input 
+                id="plateforme" 
+                type="text" 
+                class="form-control" 
+                formControlName="plateforme"
+                [ngClass]="{'is-invalid': reservationForm.get('plateforme')?.touched && reservationForm.get('plateforme')?.invalid}"
+                readonly>
+              <div class="invalid-feedback" *ngIf="reservationForm.get('plateforme')?.errors?.['required']">
+                La plateforme est requise
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="dateReservation" class="form-label">Date de réservation *</label>
+              <input 
+                id="dateReservation" 
+                type="date" 
+                class="form-control" 
+                formControlName="dateReservation"
+                [ngClass]="{'is-invalid': reservationForm.get('dateReservation')?.touched && reservationForm.get('dateReservation')?.invalid}">
+              <div class="invalid-feedback" *ngIf="reservationForm.get('dateReservation')?.errors?.['required']">
+                La date de réservation est requise
+              </div>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="statut" class="form-label">Statut de la réservation *</label>
+              <select 
+                id="statut" 
+                class="form-select" 
+                formControlName="statut"
+                [ngClass]="{'is-invalid': reservationForm.get('statut')?.touched && reservationForm.get('statut')?.invalid}">
+                <option value="En attente">En attente</option>
+                <option value="Confirmée">Confirmée</option>
+                <option value="Annulée">Annulée</option>
+              </select>
+              <div class="invalid-feedback" *ngIf="reservationForm.get('statut')?.errors?.['required']">
+                Le statut est requis
+              </div>
+            </div>
+          </div>
+  
+          <div class="mt-4">
+            <button type="submit" class="btn btn-primary me-2" [disabled]="submitting">
+              <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+              Enregistrer la réservation
+            </button>
+            <button type="button" class="btn btn-secondary" routerLink="/jeux">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
