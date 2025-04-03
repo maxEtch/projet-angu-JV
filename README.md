@@ -1,60 +1,22 @@
 # Projet
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+Ce projet est un blog développé avec Angular dans le but de prendre en main ses principales fonctionnalités. L'application permet aux utilisateurs de :
+  - Consulter la liste des jeux vidéo disponibles dans le catalogue.
+  - Voir les réservations effectuées par les clients pour un jeu.
+  - Ajouter manuellement une réservation lorsqu’un client réserve un jeu en boutique (réserver un jeux).
+  - Consulter toutes les réservations.
+  - Filtrer les jeux et les réservations.
 
-## Development server
+## Commandes
 
-To start a local development server, run:
-
+Commande utiles pour le projet :
 ```bash
 ng serve
+json-server --watch bd/db.json
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Remarques
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# projet-angu
+Pour gagner du temps, le font ainsi que l'ajout de données (les jeux vidéo et les réservations), ont été faits grâce à un chatbot IA.
+Ce mini-projet à pour but de se familiariser avec les fonctionnalités principales de Angular, dans le cadre d'une ressource en BUT Informatique à l'IUT de Bayonne et du Pays Basque.
+Fait par Maxime ETCHECOPAR
